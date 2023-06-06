@@ -4,18 +4,18 @@ number2 = float(input("Введіть друге число: "))
 
 if operation == '+':
     result = number1 + number2
-    print("Результат:", result)
+    print("Результат:")
 elif operation == '-':
     result = number1 - number2
-    print("Результат:", result)
+    print("Результат:")
 elif operation == '*':
     result = number1 * number2
-    print("Результат:", result)
+    print("Результат:" )
 elif operation == '/':
     if number2 == 0:
         print("Помилка: Ділення на нуль неможливе!")
     else:
         result = number1 / number2
-        print("Результат:", result)
+        print("Результат:")
 else:
     print("Помилка: Невідома дія")
