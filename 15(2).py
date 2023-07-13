@@ -1,14 +1,19 @@
-seconds = int(input("Введіть кількість секунд: "))
-
-days = seconds // (24 * 60 * 60)
-hours = (seconds // (60 * 60)) % 24
-minutes = (seconds // 60) % 60
-seconds = seconds % 60
-
-if days == 1:
-    days_string = "день"
+digit = int(input(' Type seconds: ' ))
+if 0 <= digit < 8640000:
+    days,digit = divmod(digit, 24 * 60 * 60)
+    hours,digit = divmod(digit, 60 * 60)
+    minutes,sec = divmod(digit, 60)
+    if 5 < days < 21:
+        day_str = 'Днів'
+    elif str(days)[-1] == '1':
+        day_str = 'День'
+    elif str (days)[-1] in ('234'):
+        day_str = 'Дні'
+    else:
+        day_str = 'Днів'
+    res = f'{days} {day_str}, {str(hours).zfill(2)}:{str(sec).zfill(2)}'
+    print(res)
 else:
-    days_string = "днів"
+    print('Bad data')
 
-time_string = f"{days} {days_string}, {str(hours).zfill(2)}:{str(minutes).zfill(2)}:{str(seconds).zfill(2)}"
-print(time_string)
+
